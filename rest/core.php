@@ -6,4 +6,5 @@ class rest_core extends \Tagged\Rest\Router {
     public function getControllerClass($controller) {
         return "$this->baseNamespace"."_$controller";
     }
+
 }
