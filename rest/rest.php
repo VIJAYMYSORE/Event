@@ -1,18 +1,24 @@
 <?php
 require_once( '../conf/config.php');
-// It's probably easy to cache all of this
-global $g_routes;
 
-$router = new rest_core(
-    $g_routes['url-root'],
-    $g_routes['routes'],
-    'api',
-    'api'
+
+$uri = $_SERVER['REQUEST_URI'];
+$method = $_SERVER['REQUEST_METHOD'];
+$host = $_SERVER['SERVER_ADDR'];
+var_dump($_SERVER);
+
+$handlerMap = array(
+    "/api/health|GET"=>"api_health|find",
+
 );
 
-// load the routes to be routed. Again, cacheable.
-$router->loadRoutes();
-// end easy caching part
+$request = explode("|",$handlerMap[$uri."|".$method]);
 
-// This must be done dynamically
-$router->routeRequest(null,strtoupper(common_array::get($_REQUEST,'_method',null)));
+$response = call_user_func(array($request[0], $request[1]));
+var_dump($response);
+
+//require_once $_SERVER['DocRoot'] . "/WebServices/{$request[0]}.php";
+
+//eval("\$requestDispatcher = new {$request[0]}();");
+
+//eval("\$requestDispatcher->{$request[1]}();");
