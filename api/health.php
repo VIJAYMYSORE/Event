@@ -13,9 +13,10 @@ class api_health {
     }
 
     public static function find() {
-	$response = new stdClass();
-	$response->id = 1;
-	$response->name = "vijay";
-	return $response;
+
+        $health = $_REQUEST['health'];
+        $result = model_health::load($health);
+        return $result;
+
     }	
 }

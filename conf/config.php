@@ -21,15 +21,17 @@ spl_autoload_register(function ($class_name) {
     }
 });
 
-//require_once("../vendor/autoload.php");
+require_once("../vendor/autoload.php");
 
-global $g_routes;
-$g_routes = array(
-                    "routes" => array(
-                        "/health" => "health"
-                    )
-                );
 
+
+//The database connection timeout in seconds.
+define('DATABASE_CONNECTION_TIMEOUT', 15);
+define('DB_MAIN_RW', 'main_rw');
+global $gDBConnectInfo;
+$gDBConnectInfo = array(
+    DB_MAIN_RW          => array('host'=>'localhost',    'port'=>'3306',    'db'=>'vijay_event',    'user'=>'vijay_event',    'pwd'=>'Event123',    'timeout'=>200, 'persistant'=>0)
+);
 
 
 
