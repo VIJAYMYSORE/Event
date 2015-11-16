@@ -16,6 +16,8 @@ class api_health {
 
         $health = 1;
         $result = model_health::load($health);
+        $resultObj = new stdClass();
+        $resultObj->result = $result;
         return $result;
 
     }	
