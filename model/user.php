@@ -36,7 +36,7 @@ class model_user {
         $dbConnection = db_base::GetDBConnection();
         $result = $dbConnection->execSQLStmt(self::LOAD_SQL . $id);
         $row = (object)$result[0];
-        return new model_user($row->id, $row->firstName, $row->lastName, $row->emailId, $row->facebookId, $row->dateOfBirth);
+        return $row;
     }
 
     public static function saveUser($firstName, $lastName, $emailId, $facebookId, $dateOfBirth) {

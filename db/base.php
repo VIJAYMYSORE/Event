@@ -375,7 +375,6 @@ class db_base {
     //  Note: You should use transpose=true when the result set as a high number of rows.
     public function execSQLStmt($sqlQuery, $multi=false, $transpose=false, $throwExceptions=false)
     {
-        var_dump($sqlQuery);
         if (null != $this->m_rsResults) {
             $this->m_rsResults->close();
             $this->m_rsResults = null;
