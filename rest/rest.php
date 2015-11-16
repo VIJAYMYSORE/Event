@@ -6,6 +6,7 @@ $uri = $_SERVER['REQUEST_URI'];
 $method = $_SERVER['REQUEST_METHOD'];
 $host = $_SERVER['SERVER_ADDR'];
 var_dump($_SERVER);
+var_dump($_REQUEST);
 
 $handlerMap = array(
     "/api/health|GET"=>"api_health|find",
