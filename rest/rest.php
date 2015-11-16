@@ -16,7 +16,10 @@ $g_body = json_decode($entityBody);
 
 $handlerMap = array(
     "/api/health|GET"=>"api_health|find",
-    "/api/user|POST"=>"api_user|create"
+    "/api/user|POST"=>"api_user|create",
+    "/api/user|GET"=>"api_user|find"
+
+
 );
 // temp hack to fix the query parameter problem
 $request = explode("?", $uri);
