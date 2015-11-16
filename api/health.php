@@ -14,7 +14,7 @@ class api_health {
 
     public static function find() {
 
-        $health = $_REQUEST['health'];
+        $health = 1;
         $result = model_health::load($health);
         return $result;
 
