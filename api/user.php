@@ -26,13 +26,12 @@ class api_user {
 
     public static function create() {
         global $g_body;
-        var_dump($g_body);
-        /*$firstName = $_REQUEST->firstName;
-        $lastName = $_REQUEST->lastName;
-        $emailId = $_REQUEST->emailId;
-        $facebookId = $_REQUEST->facebookId;
-        $dateOfBirth = $_REQUEST->dateOfBirth;
-        $result  = model_user::saveUser($firstName, $lastName, $emailId, $facebookId, $dateOfBirth);*/
+        $firstName = $g_body->firstName;
+        $lastName = $g_body->lastName;
+        $emailId = $g_body->emailId;
+        $facebookId = $g_body->facebookId;
+        $dateOfBirth = $g_body->dateOfBirth;
+        $result  = model_user::saveUser($firstName, $lastName, $emailId, $facebookId, $dateOfBirth);
         $resultObj = new stdClass();
         $resultObj->result = "Success";
         return $resultObj;
