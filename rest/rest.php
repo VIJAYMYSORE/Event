@@ -9,6 +9,9 @@ $host = $_SERVER['SERVER_ADDR'];
  var_dump($_REQUEST);
  var_dump($_POST);
 
+$request = http_get_request_body();
+var_dump($request);
+
 $handlerMap = array(
     "/api/health|GET"=>"api_health|find",
     "/api/user|POST"=>"api_user|create"
