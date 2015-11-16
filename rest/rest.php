@@ -5,12 +5,12 @@ require_once( '../conf/config.php');
 $uri = $_SERVER['REQUEST_URI'];
 $method = $_SERVER['REQUEST_METHOD'];
 $host = $_SERVER['SERVER_ADDR'];
- var_dump($_SERVER);
- var_dump($_REQUEST);
- var_dump($_POST);
+ //var_dump($_SERVER);
+ //var_dump($_REQUEST);
+ //var_dump($_POST);
+$entityBody = file_get_contents('php://input');
+var_dump($entityBody);
 
-$request = http_get_request_body();
-var_dump($request);
 
 $handlerMap = array(
     "/api/health|GET"=>"api_health|find",
