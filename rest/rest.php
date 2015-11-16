@@ -8,11 +8,11 @@ $host = $_SERVER['SERVER_ADDR'];
  //var_dump($_SERVER);
  //var_dump($_REQUEST);
  //var_dump($_POST);
-//$entityBody = file_get_contents('php://input');
-//global $g_body;
-//$g_body = json_decode($entityBody);
-global $HTTP_POST_VARS;
-var_dump($HTTP_POST_VARS);
+$entityBody = file_get_contents('php://input');
+global $g_body;
+$g_body = json_decode($entityBody);
+//global $HTTP_POST_VARS;
+//var_dump($HTTP_POST_VARS);
 
 $handlerMap = array(
     "/api/health|GET"=>"api_health|find",
