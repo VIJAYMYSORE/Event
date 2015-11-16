@@ -16,9 +16,9 @@ class model_user {
     public $dateOfBirth;
     public $dateModified;
 
-    const LOAD_SQL = "SELECT * FROM `user` where id = ";
+    const LOAD_SQL = "SELECT * FROM `User` where id = ";
 
-    const SAVE_SQL = "INSERT INTO `user` (`firstName`, `lastName`, `emailId`, `facebookId`, `dateOfBirth`) values (";
+    const SAVE_SQL = "INSERT INTO `User` (`firstName`, `lastName`, `emailId`, `facebookId`, `dateOfBirth`) values (";
 
 
 
