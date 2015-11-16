@@ -14,7 +14,7 @@ class api_user {
 
     public static function find() {
         var_dump($_REQUEST);
-        if(!isset($_REQUEST->userId) || !is_numeric($_REQUEST->userId)) {
+        if(!isset($_REQUEST['userId']) || !is_numeric($_REQUEST['userId'])) {
             throw new Exception("UserId not set or invalid");
         }
         $id = $_REQUEST->userId;
