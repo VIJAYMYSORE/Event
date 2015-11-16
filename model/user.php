@@ -35,6 +35,7 @@ class model_user {
 
         $dbConnection = db_base::GetDBConnection();
         $result = $dbConnection->execSQLStmt(self::LOAD_SQL . $id);
+        var_dump($result);
         $row = $result[0];
         return new model_user($row->id, $row->firstName, $row->lastName, $row->emailId, $row->facebookId, $row->dateOfBirth);
     }
