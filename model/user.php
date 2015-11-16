@@ -41,7 +41,7 @@ class model_user {
 
     public static function saveUser($firstName, $lastName, $emailId, $facebookId, $dateOfBirth) {
         $dbConnection = db_base::GetDBConnection();
-        $result = $dbConnection->execSQLStmt(self::SAVE_SQL . "$firstName, $lastName, $emailId, $facebookId, $dateOfBirth)");
+        $result = $dbConnection->execSQLStmt(self::SAVE_SQL . "'$firstName', '$lastName', '$emailId', '$facebookId', '$dateOfBirth')");
         var_dump($result);
         return $result;
     }
