@@ -29,4 +29,21 @@ $app->get('/api/health', function () {
     $result = api_health::find();
     echo json_encode($result);
 });
+$app->get('/api/user/:userId', function () {
+    $app = new \Slim\Slim();
+    $request = $app->request->params();
+    var_dump($request);
+    $result = api_user::find($request);
+    echo json_encode($result);
+});
+
+$app->post('/api/user', function () {
+    $app = new \Slim\Slim();
+    $request = $app->request->params();
+    var_dump($request);
+    $body = $app->request->getBody();
+    var_dump($body);
+    //$result = api_user::find($request);
+    //echo json_encode($result);
+});
 $app->run();

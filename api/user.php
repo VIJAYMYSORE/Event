@@ -12,11 +12,11 @@ class api_user {
 
     }
 
-    public static function find() {
-        if(!isset($_REQUEST['userId']) || !is_numeric($_REQUEST['userId'])) {
+    public static function find($request) {
+        if(!isset($request['userId']) || !is_numeric($request['userId'])) {
             throw new Exception("UserId not set or invalid");
         }
-        $id = $_REQUEST['userId'];
+        $id = $request['userId'];
         $result = model_user::load($id);
         $resultObj = new stdClass();
         $resultObj->result = $result;
