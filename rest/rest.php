@@ -29,10 +29,10 @@ $app->get('/api/health', function () {
     $result = api_health::find();
     echo json_encode($result);
 });
-$app->get('/api/user/:userId', function () {
+$app->get('/api/user/:userId', function ($userId) {
     $app = new \Slim\Slim();
     $request = $app->request->params();
-    var_dump($request);
+    $request['userId'] = $userId;
     $result = api_user::find($request);
     echo json_encode($result);
 });
