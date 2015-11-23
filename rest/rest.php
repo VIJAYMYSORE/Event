@@ -39,11 +39,8 @@ $app->get('/api/user/:userId', function ($userId) {
 
 $app->post('/api/user', function () {
     $app = new \Slim\Slim();
-    $request = $app->request->params();
-    var_dump($request);
-    $body = $app->request->getBody();
-    var_dump($body);
-    //$result = api_user::find($request);
-    //echo json_encode($result);
+    $body = json_decode($app->request->getBody(), true);
+    $result = api_user::create($body);
+    echo json_encode($result);
 });
 $app->run();
