@@ -32,6 +32,7 @@ class api_user {
         $dateOfBirth = $request['dateOfBirth'];
         $result  = model_user::saveUser($firstName, $lastName, $emailId, $facebookId, $dateOfBirth);
         $resultObj = new stdClass();
+        $resultObj->id = $result['id'];
         $resultObj->result = "Success";
         return $resultObj;
     }
