@@ -24,7 +24,7 @@ class api_user {
 
     }
 
-    public static function create($request) {global $g_body;
+    public static function create($request) {
         $firstName = $request['firstName'];
         $lastName = $request['lastName'];
         $emailId = $request['emailId'];
