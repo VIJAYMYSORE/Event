@@ -1,6 +1,8 @@
 <?php
 
 const BASE_DIR = "/home2/vijay/public_html/api/events/Event";
+const HOME_DIR = "/home2/vijay";
+const TMP_DIR = "/home2/vijay/tmp";
 
 require_once("../vendor/autoload.php");
 /**
