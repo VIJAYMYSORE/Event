@@ -15,6 +15,21 @@ $app->get('/api/user/:userId', function ($userId) {
     echo json_encode($result);
 });
 
+$app->get('/api/user', function () {
+    $app = new \Slim\Slim();
+    $request = $app->request->params();
+    $userId = $app->request()->params('userId');
+    if(empty($userId)) {
+        $response = "userId is required field";
+        echo json_encode($response);
+        return;
+    }
+    $request['userId'] = $userId;
+    $result = api_user::find($request);
+    echo json_encode($result);
+});
+
+
 $app->post('/api/user', function () {
     $app = new \Slim\Slim();
     $body = json_decode($app->request->getBody(), true);
